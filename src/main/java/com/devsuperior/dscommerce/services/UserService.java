@@ -49,10 +49,12 @@ public class UserService implements UserDetailsService {
 			String username = jwtPrincipal.getClaim("username");
 			User user = repository.findByEmail(username).get();
 
+			return user;
+
 		}catch (Exception e){
 			throw new UsernameNotFoundException("Email not found");
 		}
-		return new User();
+
 	}
 
 	@Transactional(readOnly = true)
@@ -60,5 +62,6 @@ public class UserService implements UserDetailsService {
 		User user = authenticated();
 		return new UserDTO(user);
 	}
+
 
 }

@@ -10,6 +10,10 @@ public class OrdemItemDTO {
     private Integer quantity;
     private String imgUrl;
 
+    public OrdemItemDTO(){
+
+    }
+
     public OrdemItemDTO(Long productId, String name, Double price, Integer quantity, String imgUrl) {
         this.productId = productId;
         this.name = name;

@@ -20,6 +20,10 @@ public class OrderDTO {
     @NotEmpty(message = "O pedido deve ter pelo menos um item!")
     private List<OrdemItemDTO> items = new ArrayList<>();
 
+    public OrderDTO(){
+
+    }
+
     public OrderDTO(Long id, Instant moment, OrderStatus status, ClientDTO client,
                     PaymentDTO payment) {
 
