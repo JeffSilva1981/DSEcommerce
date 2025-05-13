@@ -47,9 +47,8 @@ public class UserService implements UserDetailsService {
 			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 			Jwt jwtPrincipal = (Jwt) authentication.getPrincipal();
 			String username = jwtPrincipal.getClaim("username");
-			User user = repository.findByEmail(username).get();
 
-			return user;
+            return repository.findByEmail(username).get();
 
 		}catch (Exception e){
 			throw new UsernameNotFoundException("Email not found");
